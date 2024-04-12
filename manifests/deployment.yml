@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: apprafael 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apprafael
+  template:
+    metadata:
+      labels:
+        app: apprafael 
+    spec:
+      containers:
+        - name: apprafael 
+          image: crcurso.azurecr.io/apprafael
+          ports:
+          - containerPort: 8000
